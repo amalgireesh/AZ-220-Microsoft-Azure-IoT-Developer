@@ -426,7 +426,7 @@ In this task, you will use Visual Studio Code to review the contents and purpose
 
     Although this Hello World app demonstrates some basic concepts, it is clearly not a simulated device. In the next task you will replace this code with the code for your simulated device.
 
-#### Task 3: Implement the simulated device code
+#### Task 4: Implement the simulated device code
 
 In this task, you will use Visual Studio Code to enter the code that leverages the Azure IoT Device SDK to connect to your IoT Hub resource.
 
@@ -684,7 +684,7 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
 
     You are now ready to test the application
 
-#### Task 4: Test the application
+#### Task 5: Test the application
 
 1. In Visual Studio Code Explorer pane, on the **View** menu, click **Terminal**.
 
@@ -729,7 +729,7 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
 
     > **Note**: Leave the simulated device app running for now. Your next task will be to verify that your IoT Hub is receiving the telemetry messages.
 
-#### Task 3: Verify Telemetry Stream sent to Azure IoT Hub
+#### Task 6: Verify Telemetry Stream sent to Azure IoT Hub
 
 In this task, you will use the Azure CLI to verify telemetry sent by the simulated device is being received by Azure IoT Hub.
 
