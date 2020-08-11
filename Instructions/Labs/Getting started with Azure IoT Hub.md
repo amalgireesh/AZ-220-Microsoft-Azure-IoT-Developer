@@ -239,7 +239,7 @@ The IoT Hub Device Provisioning Service is a helper service for IoT Hub that ena
 
    > **Note**:  This lab exercise is only intended to be an introduction to the IoT Hub Device Provisioning Service and get you more comfortable with the UI, so don't worry if you feel a bit overwhelmed at this point. You will be covering DPS in much more detail as the course continues.
 
-### Exercise 3: Create and Test a Simulated Device (C#)
+### Exercise 4: Create and Test a Simulated Device (C#)
 
 #### Task 1: Get the Device Connection String
 
