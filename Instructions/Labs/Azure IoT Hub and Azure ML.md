@@ -107,9 +107,105 @@ In order to visualize live streaming data from IoT hub in a Power BI dashboard, 
 
 In this exercise, you will ensure that the Device Simulator app from the previous lab is running. 
 
-> **Important**: If you have not completed lab 7 of this course, do that now.
+#### Task 1: Setting up simulated device project
 
-#### Task 1: Start the VibrationSensor app in Visual Studio Code
+1. Open **Visual Studio Code**.
+
+1. On the **File** menu, click **Open Folder**.
+
+1. In the **Open Folder** dialog, navigate to the **07-Device Message Routing** folder.
+
+    In _Lab 3: Setup the Development Environment_, you cloned the GitHub repository containing lab resources by downloading a ZIP file and extracting the contents locally. The extracted folder structure includes the following folder path:
+
+    * Allfiles
+        * Labs
+            * 07-Device Message Routing
+                * Starter
+                    * VibrationDevice
+
+1. Navigate to the **Starter** folder for Lab 7.
+
+1. Click **VibrationDevice**, and then click **Select Folder**.
+
+    You should see the following files listed in the EXPLORER pane of Visual Studio Code:
+
+    * Program.cs
+    * VibrationDevice.csproj
+
+    > **Note**: If you are prompted to load required assets, you can do that now.
+ 
+1. In the **EXPLORER** pane, click **Program.cs**.
+
+    A cursory glance will reveal that the **VibrationDevice** application is very similar to those used in the preceding labs. This version of the application uses symmetric Key authentication, sends both telemetry and logging messages to the IoT Hub, and has a more complex sensor implementation.
+
+1. On the **Terminal** menu, click **New Terminal**.
+
+    Examine the directory path indicated as part of the command prompt to ensure that you are in the correct location. You do not want to start building this project within the folder structure of a previous lab project.
+  
+1. At the terminal command prompt, to verify that the application builds without errors, enter the following command:
+
+    ```cmd
+    dotnet build
+    ```
+
+    The output will be similar to:
+
+    ```text
+    ❯ dotnet build
+    Microsoft (R) Build Engine version 16.5.0+d4cbfca49 for .NET Core
+    Copyright (C) Microsoft Corporation. All rights reserved.
+
+    Restore completed in 39.27 ms for D:\Az220-Code\AllFiles\Labs\07-Device Message Routing\Starter\VibrationDevice\VibrationDevice.csproj.
+    VibrationDevice -> D:\Az220-Code\AllFiles\Labs\07-Device Message Routing\Starter\VibrationDevice\bin\Debug\netcoreapp3.1\VibrationDevice.dll
+
+    Build succeeded.
+        0 Warning(s)
+        0 Error(s)
+
+    Time Elapsed 00:00:01.16
+    ```
+
+1. Near the top of the **Program** class, locate the declaration of the `deviceConnectionString` variable:
+
+    ```csharp
+    private readonly static string deviceConnectionString = "<your device connection string>";
+    ```
+
+1. Replace `<your device connection string>` with the device connection string if it is not replaced.
+
+#### Task 2: Test your code to send telemetry
+
+1. At the Terminal command prompt, to run the app, enter the following command:
+
+    ```bash
+    dotnet run
+    ```
+
+   This command will run the **Program.cs** file in the current folder.
+
+1. Console output should be displayed that is similar to the following:
+
+    ```text
+    Vibration sensor device app.
+
+    Telemetry data: {"vibration":0.0}
+    Telemetry sent 10:29 AM
+    Log data: {"vibration":0.0,"packages":0,"speed":"stopped","temp":60.22}
+    Log data sent
+
+    Telemetry data: {"vibration":0.0}
+    Telemetry sent 10:29 AM
+    Log data: {"vibration":0.0,"packages":0,"speed":"stopped","temp":59.78}
+    Log data sent
+    ```
+
+    > **Note**:  In the Terminal window, green text is used to show things are working as they should and red text when bad stuff is happening. If you receive error messages, start by checking your device connection string.
+
+1. Leave this app running for the next task.
+
+    If you won't be continuing to the next task, you can enter **Ctrl-C** in the Terminal window to stop the app. You can start it again later by using the `dotnet run` command.
+
+#### Task 3: Start the VibrationSensor app in Visual Studio Code
 
 1. Open Visual Studio Code.
 
